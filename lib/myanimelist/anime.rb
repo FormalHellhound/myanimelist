@@ -21,7 +21,7 @@ module MyAnimeList
       response = RestClient.get "https://myanimelist.net/api/anime/search.xml",
         :User => @myanimelist_username,
         :Password => @myanimelist_password,
-        :params => {, :q => 'FMA', :content_type => 'xml'}
+        :params => {:q => 'FMA', :content_type => 'xml'}
       parse_xml response
     end
 
