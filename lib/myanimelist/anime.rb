@@ -19,7 +19,7 @@ module MyAnimeList
 
     def get_search(name)
       response = RestClient.get "https://myanimelist.net/api/anime/search.xml",
-        :params => {:user => @myanimelist_username, :password => @myanimelist_password, :q => 'FMA', :content_type 'xml'}
+        :params => {:user => @myanimelist_username, :password => @myanimelist_password, :q => 'FMA', :content_type => 'xml'}
       parse_xml response
     end
 
