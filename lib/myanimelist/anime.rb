@@ -13,6 +13,7 @@ module MyAnimeList
         name += "q=#{query}"
         name += "&" unless (index == query.size - 1)
       end
+      puts name
       get_search(name)
     end
 
