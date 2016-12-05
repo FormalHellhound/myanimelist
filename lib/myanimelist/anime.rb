@@ -24,7 +24,7 @@ module MyAnimeList
         user: @myanimelist_username,
         password: @myanimelist_password,
         q: 'FMA',
-        q: 'Shamballa',
+        #q: 'Shamballa',
         content_type: :xml ).execute
 
       parse_xml response
