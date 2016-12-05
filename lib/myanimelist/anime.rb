@@ -23,7 +23,7 @@ module MyAnimeList
         url: "https://myanimelist.net/api/anime/search.xml",
         user: @myanimelist_username,
         password: @myanimelist_password,
-        q: 'FMA',
+        headers: {q: 'FMA'},
         #q: 'Shamballa',
         content_type: :xml ).execute
 
