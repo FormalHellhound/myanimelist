@@ -9,8 +9,9 @@ module MyAnimeList
     def search(name)
       query = name.split(' ')
       name = ''
-      query.each do |query|
-        name += "q=#{query}&"
+      query.each do |query, index|
+        name += "q=#{query}"
+        name += "&" unless (index == query.size - 1)
       end
       get_search(name)
     end
@@ -18,10 +19,10 @@ module MyAnimeList
     def get_search(name)
       response = RestClient::Request.new(
         method: :get,
-        url: "https://myanimelist.net/api/anime/search.xml?#{CGI::escape name}content_type=xml",
+        url: "https://myanimelist.net/api/anime/search.xml?#{CGI::escape name}",
         user: @myanimelist_username,
         password: @myanimelist_password,
-        #content_type: :xml ).execute
+        content_type: :xml ).execute
 
       parse_xml response
     end
