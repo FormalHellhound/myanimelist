@@ -9,7 +9,7 @@ module MyAnimeList
     def search(name)
       query = name.split(' ')
       name = ''
-      query.each do |query, index|
+      query.each_with_index do |query, index|
         name += "q=#{query}"
         name += "&" unless (index == query.size - 1)
       end
