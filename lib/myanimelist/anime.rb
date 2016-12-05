@@ -7,8 +7,7 @@ module MyAnimeList
     end
 
     def search(name)
-      query = name      
-      query.split(' ')
+      query = name.split(' ')   
       name = ''
       query.each do |query|
         name += "q=#{query}&"
