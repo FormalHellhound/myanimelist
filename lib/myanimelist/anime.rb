@@ -20,7 +20,7 @@ module MyAnimeList
     def get_search(name)
       response = RestClient::Request.new(
         method: :get,
-        url: "https://myanimelist.net/api/anime/search.xml?",
+        url: "https://myanimelist.net/api/anime/search.xml",
         user: @myanimelist_username,
         password: @myanimelist_password,
         q: 'FMA',
