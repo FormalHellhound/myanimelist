@@ -8,7 +8,7 @@ module MyAnimeList
 
     def search(name)
       #query = name.split(' ')
-      name = "q=#{CGI::escape 'FMA'}&q=#{CGI::escape 'Shamballa'}"
+      name = "q=#{CGI::escape 'FMA'}+#{CGI::escape 'Shamballa'}"
       #name = ''
       #query.each_with_index do |q, index|
         #name += "#{CGI::escape q}"
