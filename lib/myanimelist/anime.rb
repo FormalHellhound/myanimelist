@@ -29,8 +29,8 @@ module MyAnimeList
     end
 
     def parse_json(response)
-      response = JSON.parse(response)
-      serialize response
+      anime = JSON.parse(response)
+      #serialize response
     end
 
     def serialize(data)
