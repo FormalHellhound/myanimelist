@@ -7,12 +7,12 @@ module MyAnimeList
     end
 
     def search(name)
-      #query = name.split(' ')
-      name = "q=#{CGI::escape 'FMA'}+#{CGI::escape 'Shamballa'}"
-      #name = ''
-      #query.each_with_index do |q, index|
-        #name += "#{CGI::escape q}"
-        #name += '%2B' unless (index+1 == query.length)
+      query = name.split(' ')
+      #name = "q=#{CGI::escape 'FMA'}&#{CGI::escape 'Shamballa'}"
+      name = ''
+      query.each_with_index do |q, index|
+        name += "q=#{CGI::escape q}"
+        name += "#{CGI::escape}&" unless (index+1 == query.length)
       #end
       puts name
       get_search(name)
