@@ -12,7 +12,7 @@ module MyAnimeList
       name = ''
       query.each_with_index do |q, index|
         name += "#{CGI::escape q}"
-        name += '+' unless (index+1 == query.length)
+        name += '%2B' unless (index+1 == query.length)
       end
       puts name
       get_search(name)
