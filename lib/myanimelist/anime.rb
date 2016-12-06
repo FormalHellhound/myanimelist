@@ -20,13 +20,7 @@ module MyAnimeList
     end
 
     def get_search(name)
-      response = RestClient::Request.execute(
-        method: :get,
-        url: "https://myanimelist.net/api/anime/search.xml?#{name}",
-        user: @myanimelist_username,
-        password: @myanimelist_password,
-        content_type: :xml)
-      puts response
+      response = IO.popen("curl -G -u #{@myanimelist_username}:#{@myanimelist_password} http://myanimelist.net/api/anime/search.xml --data-urlencode #{'q=FMA Shamballa'}")
       parse_xml response
     end
 
