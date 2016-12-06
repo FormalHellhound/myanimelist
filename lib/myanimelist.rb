@@ -5,6 +5,7 @@ require 'myanimelist/anime'
 require 'myanimelist/manga'
 require 'myanimelist/credentials'
 require 'myanimelist/serializer'
+require 'json'
 
 module MyAnimeList
   def self.configure(&block)

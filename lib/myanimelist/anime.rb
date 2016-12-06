@@ -25,11 +25,12 @@ module MyAnimeList
         user: @myanimelist_username,
         password: @myanimelist_password,
         content_type: :json)
-      serialize response
+      parse_json response
     end
 
-    def parse_xml(response)
-      serialize Hash.from_json response
+    def parse_json(response)
+      response = JSON.parse(response)
+      serialize response
     end
 
     def serialize(data)
