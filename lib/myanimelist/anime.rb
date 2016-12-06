@@ -10,9 +10,9 @@ module MyAnimeList
       query = name.split(' ')
       #name = "q=#{CGI::escape 'FMA'}&q=#{CGI::escape 'Shamballa'}"
       name = ''
-      query.each_with_index do |query, index|
-        name += "q=#{CGI::escape query}"
-        name += "&" unless (index == query.size - 1)
+      query.each_with_index do |q, index|
+        name += "q=#{CGI::escape q}"
+        name += '&' unless (index+1 == query.length)
       end
       puts name
       get_search(name)
