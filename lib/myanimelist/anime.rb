@@ -14,7 +14,7 @@ module MyAnimeList
         name += "#{CGI::escape q}"
         name += '&' unless (index+1 == query.length)
       end
-      #puts name
+      puts name
       get_search(name)
     end
 
