@@ -7,13 +7,13 @@ module MyAnimeList
     end
 
     def search(name)
-      #name = name.split(' ')
-      name = "q=#{CGI::escape 'FMA'}&q=#{CGI::escape 'Shamballa'}"
-      #query.each_with_index do |query, index|
-        #name += "q=#{query}"
-        #name += "&" unless (index == query.size - 1)
-      #end
-      #puts name
+      name = name.split(' ')
+      #name = "q=#{CGI::escape 'FMA'}&q=#{CGI::escape 'Shamballa'}"
+      query.each_with_index do |query, index|
+        name += "q=#{CGI::escape query}"
+        name += "&" unless (index == query.size - 1)
+      end
+      puts name
       get_search(name)
     end
 
@@ -23,7 +23,6 @@ module MyAnimeList
         url: "https://myanimelist.net/api/anime/search.xml?#{name}",
         user: @myanimelist_username,
         password: @myanimelist_password,
-        #payload: { q: CGI::escape('FMA') },
         content_type: :xml)
       parse_xml response
     end
