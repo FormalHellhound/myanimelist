@@ -25,6 +25,7 @@ module MyAnimeList
         user: @myanimelist_username,
         password: @myanimelist_password,
         content_type: :xml)
+      puts response
       parse_xml response
     end
 
